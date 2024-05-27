@@ -37,10 +37,6 @@ public class UserEntity {
     @Column(name = "is_enabled", nullable = false)
     private Boolean enabled;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<ShoppingList> shoppingLists;
-
     public boolean isAdmin() {
         return roles.stream().anyMatch(role -> role.getName().equalsIgnoreCase("ADMIN"));
     }

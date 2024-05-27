@@ -28,17 +28,4 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
-    @Override
-    public UserEntity updateUser(Long id, UserEntity user) {
-        return null;
-    }
-
-    @Override
-    public Void banUser(Long id) {
-        Optional<UserEntity> user = userRepository.findById(id);
-        Boolean userStatus = user.get().getEnabled();
-        user.get().setEnabled(!userStatus);
-        userRepository.save(user.get());
-        return null;
-    }
 }

@@ -13,9 +13,4 @@ public interface UserService {
 
     List<UserEntity> getAllUsers();
 
-    UserEntity updateUser(Long id, UserEntity user);
-
-    Void banUser(Long id);
-
-
 }
